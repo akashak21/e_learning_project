@@ -26,6 +26,14 @@ public class FeedbackController {
 		return "feedbacks";
 	}
 	
+	@GetMapping("/admin-feedback-list")
+	public String AdminFeedbackPage(Model model) {
+		
+		List<Feedback> feedbackList = feedbackdao.findAll();
+		model.addAttribute("list1", feedbackList);
+		return "admin-view-feedback";
+	}
+	
 	@GetMapping("/addFeedback")
 	public String addUserForm(Model model) {
 		model.addAttribute("feedback", new Feedback());
@@ -44,6 +52,11 @@ public class FeedbackController {
 		return "redirect:/feedback-list";
 	}
 	
+	@GetMapping("/admin-delete-feedback/{f_id}")
+	public String AdmindeleteUser(@PathVariable("f_id") int f_id) {
+		feedbackdao.deleteFeedback(f_id);
+		return "redirect:/admin-feedback-list";
+	}
 	
 	@GetMapping("/update-feedback/{f_id}")
 	public String updateUserForm(@PathVariable("f_id")int f_id, Model model) {

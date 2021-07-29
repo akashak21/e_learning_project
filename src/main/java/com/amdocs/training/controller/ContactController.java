@@ -27,6 +27,13 @@ public class ContactController {
 		model.addAttribute("list", contactList);
 		return "contact";
 	}
+	@GetMapping("/admin-contact-list")
+	public String AdmincontactPage(Model model) {
+		
+		List<Contact> contactList = contactdao.findall();
+		model.addAttribute("list", contactList);
+		return "admin-view-contact";
+	}
 	
 	@GetMapping("/addContact")
 	public String addUserForm(Model model) {

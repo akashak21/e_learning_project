@@ -28,7 +28,13 @@ public class UserController {
 		model.addAttribute("list", userList);
 		return "users";
 	}
-	
+	@GetMapping("/admin-user-list")
+	public String AdminusersPage(Model model) {
+		
+		List<user> userList = userdao.findAll();
+		model.addAttribute("list", userList);
+		return "admin-view-user";
+	}
 	@GetMapping("/addUser")
 	public String addUserForm(Model model) {
 		model.addAttribute("user", new user());

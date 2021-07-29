@@ -7,7 +7,7 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-<title>Insert title here</title>
+<title>Add Contact Details</title>
 <style>
 .formcenter{
 	margin-left : 500px;
@@ -20,7 +20,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark justify-content-end" style="color:black;">
-  <p style="margin-right:780px;color:White;font-size:25px;font-weight:bold;font-family:Georgia">E Learning Portal</p>
+  <p style="margin-right:650px;color:White;font-size:25px;font-weight:bold;font-family:Georgia">E Learning Portal</p>
  
 <ul class="nav justify-content-end">
   <li class="nav-item">
@@ -35,9 +35,12 @@
   <li class="nav-item">
     <a class="nav-link" href="feedback-list" style="color:white;">Feedback</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="home" style="color:white;">Logout</a>
+  </li>
 </ul>
  </nav><br>
-	<h3 style="text-align:center;margin-top:30px;font-family:Times new roman;font-weight:bold;">User Registration</h3>
+	<h3 style="text-align:center;margin-top:30px;font-family:Times new roman;font-weight:bold;">Add User Contact</h3>
 	<hr>
 	<div class="formcenter">
 	<form:form action="registercontact" method="POST" modelAttribute="contact">

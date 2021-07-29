@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import dao.AdminDAO;
 import dao.CoursesDAO;
+import dao.impl.AdminDAOImpl;
 import dao.impl.CoursesDAOImpl;
+import model.Admin;
 import model.courses;
 
 
@@ -27,7 +30,13 @@ public class CourseController {
 		model.addAttribute("list", courseList);
 		return "courses";
 	}
-	
+	@GetMapping("/course-list-admin")
+	public String AdminCourseView(Model model) {
+		
+		List<courses> courseList = coursedao.findAll();
+		model.addAttribute("list", courseList);
+		return "admincoursesview";
+	}
 	@GetMapping("/addCourse")
 	public String addUserForm(Model model) {
 		model.addAttribute("course", new courses());
@@ -37,13 +46,13 @@ public class CourseController {
 	@PostMapping("/registercourse")
 	public String addUser(@ModelAttribute("course") courses u) {
 		coursedao.addCourses(u);
-		return "redirect:/course-list";
+		return "redirect:/course-list-admin";
 	}
 	
 	@GetMapping("/delete-course/{course_id}")
 	public String deleteUser(@PathVariable("course_id") int course_id) {
 		coursedao.deleteCourse(course_id);
-		return "redirect:/course-list";
+		return "redirect:/course-list-admin";
 	}
 	
 
@@ -54,11 +63,12 @@ public class CourseController {
 		return "update-course";
 	}
 	
-	@GetMapping("/update-course")
+	@PostMapping("/update-course")
 	public String updateUser(@ModelAttribute("course")courses course) {
 		coursedao.updateCourses(course);
-		return "redirect:/course-list";
+		return "redirect:/course-list-admin";
 	}
-
+	
+	
 
 }

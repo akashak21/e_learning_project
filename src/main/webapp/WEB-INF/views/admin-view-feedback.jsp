@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>User Details</title>
+<title>User Feedback</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <style>
@@ -18,27 +18,33 @@ th,td{
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark justify-content-end" style="color:black;">
-  <p style="margin-right:650px;color:White;font-size:25px;font-weight:bold;font-family:Georgia">E Learning Portal</p>
+  <p style="margin-right:500px;color:White;font-size:25px;font-weight:bold;font-family:Georgia">E Learning Portal</p>
  
 <ul class="nav justify-content-end">
   <li class="nav-item">
-    <a class="nav-link" href="course-list" style="color:white;">Home</a>
+    <a class="nav-link" href="course-list-admin" style="color:white;">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="user-list" style="color:white;">User</a>
+    <a class="nav-link" href="admin-user-list" style="color:white;">User</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="contact-list" style="color:white;">Contact</a>
+    <a class="nav-link" href="admin-contact-list" style="color:white;">Contact</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#" style="color:white;">Feedback</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="course-list-admin" style="color:white;">Courses</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="admin-view-list" style="color:white;">Admin</a>
   </li>
     <li class="nav-item">
     <a class="nav-link" href="home" style="color:white;">Logout</a>
   </li>
 </ul>
  </nav><br>
- <h3 style="text-align:center;margin-top:40px;font-family:Times new roman;font-weight:bold;">User Feedback Details</h3><br>
+  <h3 style="text-align:center;margin-top:40px;font-family:Times new roman;font-weight:bold;">User Feedback Details</h3><br>
  
 <table align="center">
 <tr>
@@ -56,12 +62,10 @@ th,td{
 <td>${feedback.name }</td>
 <td>${feedback.email }</td>
 <td>${feedback.feedback }</td>
-<td> <a href="<c:url value='/update-feedback/${feedback.f_id }'/>"><i class='fas fa-edit'></i></a></td>
+<td><a href="<c:url value='/admin-delete-feedback/${feedback.f_id }'/>"><i class='fas fa-trash-alt'></i></a></td>
 </tr>
 </c:forEach>
 </table>
-<br>
-<a href="addFeedback"><input type="submit" value="Add Feedback" class="btn btn-primary" style="margin-left:620px;"></a>
-
+ 
 </body>
 </html>

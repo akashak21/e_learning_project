@@ -7,7 +7,7 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-<title>Insert title here</title>
+<title>Add User</title>
 <style>
 .formcenter{
 	margin-left : 500px;
@@ -24,10 +24,10 @@
  
 <ul class="nav justify-content-end">
   <li class="nav-item">
-    <a class="nav-link" href="#" style="color:white;">User Login</a>
+    <a class="nav-link" href="home" style="color:white;">User Login</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#" style="color:white;">Admin Login</a>
+    <a class="nav-link" href="adminlogin" style="color:white;">Admin Login</a>
   </li>
 </ul>
  </nav>
